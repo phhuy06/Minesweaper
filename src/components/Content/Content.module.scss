@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    .leftBar {
+        background-image: url('../../assets/img/border_vert_2x.png');
+        background-size: 100% 100%;
+        width: var(--bar-width);
+        margin-left: -20px;
+    }
+    .content{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .reset{
+            background-image: url('../../assets/img/closed.png');
+            background-size: 100% 100%;
+            width: 40px;
+            margin-left: calc(50% - 20px);
+            text-align: center;
+            font-size: var(--header-font-size);
+            color: yellow;
+            &:hover{
+                cursor: pointer;
+                opacity: .6;
+            }
+        }
+    }
+    .rightBar{
+        background-image: url('../../assets/img/border_vert_2x.png');
+        background-size: 100% 100%;
+        width: var(--bar-width);
+        margin-right: -20px;
+    }
+}

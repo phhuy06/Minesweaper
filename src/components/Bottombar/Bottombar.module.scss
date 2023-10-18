@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    height: var(--bar-height);
+    width: 100%;
+    .leftCorner{
+        background-image: url('../../assets/img/t_left_2x.png');
+        background-size: 100% 100%;
+        width: var(--bar-width);
+        margin-left: -20px;
+    }
+    .bottomBar{
+        background-image: url('../../assets/img/border_hor_2x.png');
+        background-size: 100% 100%;
+        width: 100%;
+    }
+    .rightCorner{
+        background-image: url('../../assets/img/t_right_2x.png');
+        background-size: 100% 100%;
+        width: var(--bar-width);
+        margin-right: -20px;
+    }
+}

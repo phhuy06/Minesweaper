@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    .box {
+        font-size: 1rem;
+        background-image: url('../../assets/img/closed.png');
+        background-size: 100% 100%;
+        width: calc(100% / 16);
+        height: calc(100% / 16);
+        .number0{
+            background-image: url('../../assets/img/type0.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+        .number1{
+            background-image: url('../../assets/img/type1.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+        .number2{
+            background-image: url('../../assets/img/type2.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+        .number3{
+            background-image: url('../../assets/img/type3.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+        .number4{
+            background-image: url('../../assets/img/type4.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+        .number5{
+            background-image: url('../../assets/img/type5.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+        .number6{
+            background-image: url('../../assets/img/type6.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+        .number7{
+            background-image: url('../../assets/img/type7.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+        .flag{
+            background-image: url('../../assets/img/flag.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+        .lose{
+            background-image: url('../../assets/img/mine_red.png');
+            background-size: 100% 100%;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .unbox{
+        animation: unbox ease .2s forwards;
+    }
+}
+
+@keyframes unbox {
+    0%{
+        opacity: .5;
+    }
+    100%{
+        opacity: 1;
+        background-image: none;
+    }
+}
