@@ -1,9 +1,5 @@
 const move = [-17, -1, 15, -16, 16, -15, 1, 17];
-const visited = [];
-for(let i = 0;i<256;i++){
-    visited.push(0);
-}
-function Loang( table, ind, number0 ) {
+function Loang( table, ind, number0, visited ) {
     for (let k = 0; k < 8; k++) {
         if ((ind % 16 === 0 && k <= 2) || (ind % 16 === 15 && k >= 5)) {
             continue;
@@ -15,7 +11,7 @@ function Loang( table, ind, number0 ) {
         if(table[newind].number === 0 && !visited[newind]){
             visited[newind] = 1;
             number0.push(newind);
-            Loang( table, newind, number0 );
+            Loang( table, newind, number0,visited );
         }
     }
     for (let k = 0; k < 8; k++) {

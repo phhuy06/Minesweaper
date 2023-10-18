@@ -3,11 +3,18 @@ import styles from './Table.module.scss';
 import Reset from './reset';
 import Loang from './loang';
 import clsx from 'clsx';
+import { useSelector } from 'react-redux';
+
 function Table() {
+    const action = useSelector(state => state.control.value);
     const [table, setTable] = useState([]);
     useEffect(() => {
         setTable(Reset());
     }, []);
+
+    useEffect(() => {
+        setTable(Reset());
+    }, [action])
 
     useEffect(() => {
         let cnt = 0;
@@ -23,9 +30,6 @@ function Table() {
     }, [table])
 
     function handleLose(newtable, ind) {
-        setTimeout(() => {
-            setTable(Reset());
-        }, 2000);
         newtable[ind].lose = true;
         for (let i = 0; i < table.length; i++) {
             if (newtable[i].mine) {
@@ -104,8 +108,11 @@ function Table() {
                 }
                 for(let i = 0;i<toopen.length;i++){
                     if(table[toopen[i]].number === 0 && !table[toopen[i]].click){
-                        const loang = Loang(table, toopen[i], []).filter((value, index, self) => self.indexOf(value) === index);
-                        loang.push(toopen[i]);
+                        const visited = [];
+                        for(let i = 0;i<256;i++){
+                            visited.push(0);
+                        }
+                        const loang = Loang(table, toopen[i], [], visited).filter((value, index, self) => self.indexOf(value) === index);
                         openNumber(loang);  
                     }
                 }
@@ -117,8 +124,12 @@ function Table() {
                 return handleLose(newtable, ind);
             } else {
                 if (newtable[ind].number === 0) {
-                    const loang = Loang(table, ind, []).filter((value, index, self) => self.indexOf(value) === index);
-                    loang.push(ind);
+                    const visited = [];
+                    for(let i = 0;i<256;i++){
+                        visited.push(0);
+                    }
+                    const loang = Loang(table, ind, [], visited).filter((value, index, self) => self.indexOf(value) === index);
+                    console.log(loang);
                     return openNumber(loang);
                 } else {
                     return openNumber([ind]);
