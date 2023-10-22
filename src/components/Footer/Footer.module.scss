@@ -2,12 +2,12 @@
     display: flex;
     height: var(--bar-height);
     width: 100%;
-    // .leftCorner{
-    //     background-image: url('../../assets/img/corner_bottom_left_2x.png');
-    //     background-size: 100% 100%;
-    //     width: var(--bar-width);
-    //     margin-left: -20px;
-    // }
+    .leftCorner{
+        background-image: url('../../assets/img/corner_bottom_left_2x.png');
+        background-size: 100% 100%;
+        width: var(--bar-width);
+        margin-left: -20px;
+    }
     .footer{
         background-image: url('../../assets/img/border_hor_2x.png');
         background-size: 100% 100%;
