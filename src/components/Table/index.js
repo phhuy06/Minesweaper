@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Table.module.scss';
 import Reset from './reset';
-import Loang from './loang';
+import Loang, { move } from './loang';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 
@@ -75,7 +75,6 @@ function Table() {
     function handleClick(ind) {
         let newtable = [...table];
         if (table[ind].click) {
-            const move = [-17, -1, 15, -16, 16, -15, 1, 17];
             let cnt = 0;
             for (let k = 0; k < 8; k++) {
                 if ((ind % 16 === 0 && k <= 2) || (ind % 16 === 15 && k >= 5)) {
